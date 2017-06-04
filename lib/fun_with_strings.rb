@@ -3,10 +3,10 @@ module FunWithStrings
     (str = self.gsub(/(\W|\d)/, "").downcase) == str.reverse
   end
   def count_words
-    # your code here
+    Hash.new(0).tap {|hash| (self.gsub(/[^\w\s]/, "").downcase).split.each { |word| hash[word] += 1} }
   end
   def anagram_groups
-    # your code here
+    self.gsub(/[^\w\s]/, "").split.group_by { |word| word.downcase.chars.sort}.values
   end
 end
 
