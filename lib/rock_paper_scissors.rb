@@ -15,7 +15,7 @@ class RockPaperScissors
   end
 
   def self.tournament_winner(tournament)
-    # YOUR CODE HERE
+    if tournament[0][0].is_a? String then return winner(tournament[0], tournament[1]) end
+    return winner(tournament_winner(tournament[0]), tournament_winner(tournament[1]))
   end
-
 end
